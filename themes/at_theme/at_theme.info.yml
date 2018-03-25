@@ -1,0 +1,12 @@
+name: Accessbility Tools Theme
+type: theme
+base theme: classy
+description: A basic Drupal 8 Theme
+package: custom
+core: 8.x
+
+libraries:
+  - core/jquery
+  - core/drupal
+  - core/jquery.once
+  - at_theme/global

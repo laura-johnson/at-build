@@ -1,0 +1,12 @@
+{#
+
+Description text for the Fapi Example.
+
+#}
+
+{{ attach_library('core/drupal.dialog.ajax') }}
+{% set simple_form = path('at_demo.simple_form') %}
+{% trans %}
+<p>Form example to demonstrate accessibility tools using the Drupal Form API</p>
+<p><a href={{ simple_form }}>Simple form</a></p>
+{% endtrans %}

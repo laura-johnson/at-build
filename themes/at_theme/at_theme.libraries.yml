@@ -1,0 +1,7 @@
+global:
+  css:
+    theme:
+      assets/css/at_theme.style.css: {}
+  js:
+    assets/js/scripts.js: {}
+

@@ -1,0 +1,13 @@
+# Define default links for this module.
+at_demo.description:
+  title: Accessibility Tools Demo
+  description: Examples for use in the Accessibility Tools demo
+  route_name: at_demo.description
+  expanded: TRUE
+
+at_demo.simple_form:
+  title: Simple form
+  description: A simple form example.
+  route_name: at_demo.simple_form
+  parent: at_demo.description
+  weight: -9

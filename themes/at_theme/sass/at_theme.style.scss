@@ -1,0 +1,35 @@
+// @file
+// SASS partials import.
+// -----------------------------------------------------------------------------
+
+// Bootstrap functions & variables.
+// -----------------------------------------------------------------------------
+@import "../vendor/bootstrap/scss/functions";
+@import "../vendor/bootstrap/scss/variables";
+@import "../vendor/bootstrap/scss/mixins/breakpoints";
+
+// One Platform variables overrides.
+// -----------------------------------------------------------------------------
+@import "base/variables";
+
+// Boostrasp mixins.
+// -----------------------------------------------------------------------------
+@import "../vendor/bootstrap/scss/mixins";
+
+// One Platform Base.
+// -----------------------------------------------------------------------------
+@import "base/functions";
+@import "base/mixins";
+@import "base/typography";
+@import "base/helpers";
+
+// One Platform Components.
+// -----------------------------------------------------------------------------
+@import "components/hero";
+@import "components/modal";
+@import "components/pardot";
+@import "components/slideshow";
+@import "components/video";
+
+// One Platform Layout.
+// -----------------------------------------------------------------------------
