@@ -1,6 +1,6 @@
 name: Accessibility Tools Form
 type: module
-description: Demonstrates accessibility tools.
+description: Demonstrates at-build.
 package: Custom
 # core: 8.x
 dependencies:
