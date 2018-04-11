@@ -108,7 +108,7 @@ gulp.task('lighthouse', function () {
                     }
                 }
                 gutil.log("\033[1;31m Please resolve these errors before committing \033[0m");
-                process.exit(1);
+                //process.exit(1);
             }
         }
 
