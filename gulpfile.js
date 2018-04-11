@@ -98,9 +98,9 @@ gulp.task('lighthouse', function () {
             if (obj.result.details && obj.result.details.items.length > 0) {
 
                 gutil.log('\033[1;31m -------- Lighthouse alert --------- \033[0m');
-                gutil.log('\033[0;36m name:\033[0m' + obj.result.name);
-                gutil.log('\033[0;36m helpText\033[0m:' + obj.result.helpText);
-                gutil.log('\033[0;36m description\033[0m:' + obj.result.description);
+                gutil.log('name: ' + obj.result.name);
+                gutil.log('helpText: ' + obj.result.helpText);
+                gutil.log('description: ' + obj.result.description);
                 for (var it in obj.result.details.items) {
                     var item = obj.result.details.items[it];
                     for (var i in item) {
@@ -108,7 +108,7 @@ gulp.task('lighthouse', function () {
                     }
                 }
                 gutil.log("\033[1;31m Please resolve these errors before committing \033[0m");
-                //process.exit(1);
+                process.exit(1);
             }
         }
 
