@@ -81,7 +81,7 @@ gulp.task('wave', function () {
 
 gulp.task('lighthouse', function () {
 
-    exec("lighthouse http://at-build/accessibility-tools/simple-form --output json --chrome-flags='--headless' --quiet", function (err, stdout, stderr) {
+    exec("lighthouse http://at-build/accessibility-tools/simple-form --output json --output-path=./report.json", function (err, stdout, stderr) {
 
         //console.log(stderr);
 
@@ -97,17 +97,17 @@ gulp.task('lighthouse', function () {
             var x = 0;
             if (obj.result.details && obj.result.details.items.length > 0) {
                 x++;
-                gutil.log('-------- Lighthouse alert ' + x + ' ---------');
-                gutil.log('name:' + JSON.stringify(obj.result.name));
-                gutil.log('helpText:' + JSON.stringify(obj.result.helpText));
-                gutil.log('description:' + JSON.stringify(obj.result.description));
+                gutil.log('\033[1;31m -------- Lighthouse alert ' + x + ' --------- \033[0m');
+                gutil.log('\033[0;36m name:\033[0m' + obj.result.name);
+                gutil.log('\033[0;36m helpText\033[0m:' + obj.result.helpText);
+                gutil.log('\033[0;36m description\033[0m:' + obj.result.description);
                 for (var it in obj.result.details.items) {
                     var item = obj.result.details.items[it];
                     for (var i in item) {
-                        gutil.log(i + ' = ' + item[i]);
+                        gutil.log('\033[0;36m' + i + '\033[0m = ' + item[i]);
                     }
                 }
-                gutil.log("Please resolve these errors before committing");
+                gutil.log("\033[1;31m Please resolve these errors before committing \033[0m");
                 process.exit(1);
             }
         }

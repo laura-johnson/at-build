@@ -1,0 +1,68 @@
+#
+# Example .travis.yml file.
+#
+# Copy to your project and rename to .travis.yml.
+# Customize per the instructions below.
+#
+language: php
+
+php:
+  - 5.6
+
+mysql:
+  database: drupal
+  username: root
+  encoding: utf8
+
+before_install:
+  - composer self-update
+
+install:
+  # add composer's global bin directory to the path
+  # see: https://github.com/drush-ops/drush#install---composer
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
+  - source ~/.bashrc
+
+  # Install Drush
+  - composer global require drush/drush:dev-master
+  - phpenv rehash
+
+  #- yarn global add lighthouse
+
+  # Create MySQL Database
+  # - mysql -e 'create database drupal;'
+
+
+# Tweak PHP configuration.
+  # Copied from Lightning.
+  # We were getting an error where drush si is trying to send mail even though the flag to prevent that was set.
+  - echo 'max_execution_time = 120' >> drupal.php.ini;
+  - echo 'sendmail_path = /bin/true' >> drupal.php.ini;
+  - phpenv config-add drupal.php.ini
+  - phpenv rehash
+
+  # Lighthouse
+  - npm install -g lighthouse
+
+  # Create MySQL Database
+  - mysql -e 'create database drupal;'
+
+  # Install drupal default profile
+  - drush --verbose site-install --db-url=mysql://root:@127.0.0.1/drupal --yes
+
+
+before_script:
+  - npm install -g gulp-cli
+
+script: gulp lighthouse
+
+
+# Move into core directory for phpunits benefit
+  - cd core
+
+notifications:
+  email:
+    recipients:
+      - laura.j@myplanet.com
+    on_success: always
+    on_failure: always
