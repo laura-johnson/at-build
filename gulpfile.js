@@ -94,10 +94,10 @@ gulp.task('lighthouse', function () {
             if (!response.reportCategories[2].audits.hasOwnProperty(key)) continue;
 
             var obj = response.reportCategories[2].audits[key];
-            var x = 0;
+
             if (obj.result.details && obj.result.details.items.length > 0) {
-                x++;
-                gutil.log('\033[1;31m -------- Lighthouse alert ' + x + ' --------- \033[0m');
+
+                gutil.log('\033[1;31m -------- Lighthouse alert --------- \033[0m');
                 gutil.log('\033[0;36m name:\033[0m' + obj.result.name);
                 gutil.log('\033[0;36m helpText\033[0m:' + obj.result.helpText);
                 gutil.log('\033[0;36m description\033[0m:' + obj.result.description);

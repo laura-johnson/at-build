@@ -7,6 +7,8 @@ var gulp  = require('gulp'),
     lighthouse = require('lighthouse'),
     grok = 'http://772fbfa3.ngrok.io';
 
+gulp.task('pre-commit', ['tenon']);
+
 gulp.task('tenon', function () {
 
     //exec("curl -X POST -H Content-Type:application/x-www-form-urlencoded -H Cache-Control:no-cache -d 'url=http://772fbfa3.ngrok.io&key=2416d4080d01c2103b5c76e3b9487343' https://tenon.io/api/", function (err, stdout, stderr) {

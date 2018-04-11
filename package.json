@@ -42,9 +42,11 @@
   },
   "dependencies": {
     "child_process": "^1.0.2",
+    "fs": "0.0.1-security",
     "gulp-post": "^1.0.2",
     "lighthouse": "^2.9.2",
     "node-jq": "^1.2.0",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "split-json": "^2.2.0"
   }
 }

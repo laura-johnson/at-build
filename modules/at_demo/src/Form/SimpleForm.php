@@ -36,9 +36,17 @@ class SimpleForm extends FormBase {
       '#markup' => $this->t('This basic example shows a single text input element and a submit button'),
     ];
 
-    $form['title'] = [
+    $form['name'] = [
       '#type' => 'textfield',
-      '#description' => $this->t('Title must be at least 5 characters in length.'),
+      //'#title' => $this->t('Name'),
+      '#attributes' => ['placeholder' => t('Name')],
+      '#required' => TRUE,
+    ];
+
+    $form['email'] = [
+      '#type' => 'email',
+      //'#title' => $this->t('Title'),
+      '#attributes' => ['placeholder' => t('Email Address')],
       '#required' => TRUE,
     ];
 
