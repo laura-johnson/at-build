@@ -38,15 +38,15 @@ class SimpleForm extends FormBase {
 
     $form['name'] = [
       '#type' => 'textfield',
-      //'#title' => $this->t('Name'),
-      '#attributes' => ['placeholder' => t('Name')],
+      '#title' => $this->t('Name'),
+      //'#attributes' => ['placeholder' => t('Name')],
       '#required' => TRUE,
     ];
 
     $form['email'] = [
       '#type' => 'email',
-      //'#title' => $this->t('Email address'),
-      '#attributes' => ['placeholder' => t('Email address')],
+      '#title' => $this->t('Email address'),
+      //'#attributes' => ['placeholder' => t('Email address')],
       '#required' => TRUE,
     ];
 
